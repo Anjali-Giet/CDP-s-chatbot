@@ -1,0 +1,37 @@
+create database cdp_chatbot;
+use cdp_chatbot;
+CREATE TABLE cdp_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question TEXT,
+    answer TEXT
+);
+INSERT INTO cdp_data (question, answer) VALUES 
+("What is Vault?", "Vault is a feature for secure management of sensitive data and credentials."),
+("How do I access accounts?", "To access accounts, log in with your credentials and navigate to the account management section."),
+("How do I monitor metrics and alerts?", "Metrics and alerts can be monitored through the monitoring dashboard or API."),
+("What is identity resolution?", "Identity resolution refers to the process of associating different identifiers to a single user profile."),
+("What is consent & privacy?", "Consent & privacy management ensures that customer data is collected and used in compliance with privacy regulations."),
+("What are client & server side cookies?", "Client-side cookies are stored on the user's browser, while server-side cookies are stored on the web server."),
+("What is Cloud Connect?", "Cloud Connect is a feature that enables seamless integration with cloud-based warehouses and tools."),
+("How do I connect warehouses?", "Warehouses can be connected by configuring the appropriate API keys or connection strings in the platform settings."),
+("What are data models & queries?", "Data models and queries help you define and retrieve structured data to support analytics and reporting."),
+("How do I leverage user profiles?", "User profiles are leveraged for personalizing experiences and targeting specific audiences."),
+("How do I create audiences?", "Audiences can be created by segmenting users based on specific behaviors or attributes."),
+("How do I view reports?", "Reports can be viewed via the reporting dashboard, which provides insights into user behavior and platform performance."),
+("How do I collect data and onboard users?", "Data collection and onboarding involve setting up tracking code or SDKs to gather user data and create profiles."),
+("How do I manage data?", "Data management includes organizing, cleaning, and structuring the data for better insights and reporting."),
+("What SDKs are available?", "The available SDKs include web, mobile, and chrome extensions."),
+("What integrations are available?", "Lytics integrates with various third-party tools like Acoustic, Adobe, and others."),
+("What are partner types?", "Partner types include service partners, technology partners, and integration partners."),
+("What is Lytics communication?", "Lytics communication allows for sending personalized messages or notifications to users."),
+("What is legacy communication?", "Legacy communication refers to older methods of data integration and user communication."),
+("How do I import external experiences?", "External experiences can be imported by integrating with third-party platforms or APIs."),
+("What is IDP-initiated SSO?", "IDP-initiated SSO allows for single sign-on by authenticating users through an identity provider.");
+
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('Admin', 'User') NOT NULL
+);
